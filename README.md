@@ -48,10 +48,10 @@ Objetivo</p>
 Desenvolver uma aplicação interativa capaz de conectar doadores às Organizações Não Governamentais (ONGs), possibilitando aos doadores visualizar projetos sociais, campanhas ou ações que estão ocorrendo no momento, além de permitir selecionar qual projeto se identifica para apoiar. A plataforma contará ainda com informações dos beneficiários e o critério utilizado para seleção dessas pessoas que serão contempladas pelas doações arrecadadas e permitirá que ONGs gerenciem as doações recebidas, que poderão ser agasalhos, alimentos, materiais de higiene pessoal ou doações financeiras.
 
 Os objetivos específicos da aplicação são:</p>
-•	Identificar ONGs e seus projetos;
-•	Conectar projetos de ONGs a doadores em potencial;
-•	Disponibilizar para o usuário doador a visualização e acompanhamento de projetos existentes nas ONGs;
-•	Fornecer uma aplicação interativa capaz de estimular a realização de doações de forma virtual.
+•	Identificar ONGs e seus projetos; </p>
+•	Conectar projetos de ONGs a doadores em potencial;</p>
+•	Disponibilizar para o usuário doador a visualização e acompanhamento de projetos existentes nas ONGs;</p>
+•	Fornecer uma aplicação interativa capaz de estimular a realização de doações de forma virtual.</p>
 
 Justificativa</p>
 É evidente – conhecimento empírico – que as ações do poder público nem sempre suprem as demandas sociais, em países emergentes, como o Brasil, a precariedade de muitos serviços públicos, ou mesmo o abando, revela o quão importante é o trabalho das entidades do terceiro setor.
@@ -135,7 +135,7 @@ A equipe está organizada da seguinte maneira:
 2.	Tobias Gabriel Abreu Faria
 3.	Igor Vicente Machado
 4.	Bruno Medeiros
-4.	Equipe de Design: Igor Vicente Machado
+4.	Equipe de Design: 
 1.	Bruno Medeiros
 2.	Igor Vicente Machado
 3.	Leandro Ângelo Scardoelli
@@ -205,9 +205,6 @@ Tela – Meta de doações
 
 ## Diagrama Entidade - Relacionamento 
 
-
-
-
 Arquitetura da Solução  </p>
 Template padrão do Site  </p>
 Programação de Funcionalidades  </p>
@@ -216,18 +213,6 @@ Registro de Testes de Software  </p>
 Apresentação do Projeto  </p>
 Referências  </p>
   
-
-
-## Integrantes
-
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-
-## Orientador
-
-* Nome completo do professor 1
 
 ## Instruções de utilização
 
