@@ -6,18 +6,18 @@
 
 `2° SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Desenvolver uma aplicação interativa capaz de conectar doadores às Organizações Não Governamentais (ONGs), possibilitando aos doadores visualizar projetos sociais, campanhas ou ações que estão ocorrendo no momento, além de permitir selecionar qual projeto se identifica para apoiar. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Bruno Medeiros
+* Igor Vicente Machado
+* Leandro Ângelo Scardoelli
+* Tobias Gabriel Abreu Faria
 
 ## Orientador
 
-* Nome completo do professor 1
+* José Wilson da Costa
 
 ## Instruções de utilização
 
