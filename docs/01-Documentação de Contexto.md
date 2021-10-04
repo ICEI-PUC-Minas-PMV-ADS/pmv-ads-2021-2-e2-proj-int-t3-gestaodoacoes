@@ -1,6 +1,14 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+De acordo com parecer da Organização Mundial da Saúde, estamos vivendo a maior crise sanitária, causada pela pandemia do coronavírus, dos últimos 50 anos (OMS, 2020).
+O mundo de uma forma geral, nunca precisou tanto expandir laços e acolher os mais necessitados. Um recente relatório elaborado pela BBC Brasil constatou que a miséria, a pobreza e a marginalização dos mais pobres nunca foram tão flagrantes e vívidas em nosso seio social (CARRANÇA, 2021). Esta crise de saúde causada pela disseminação incontrolada do vírus, acabou se transformando em uma crise humanitária sem precedentes, cerceando o acesso aos direitos mais singelos e básicos que uma pessoa necessita para ter uma vida digna.
+No cenário nacional, temos a sétima sociedade mais desigual do mundo, conforme recentes estudos divulgados pela Fundação Getúlio Vargas (FORTE, 2020). Apenas uma pequena parcela de privilegiados tem amplo acesso a todos os serviços e direitos previstos constitucionalmente, enquanto que a maioria absoluta da população vive à margem do amparo estatal e do abandono social.
+Conforme relatório elaborado pelo Portal UOL no mês de maio deste ano, este colapso acabou por lançar na extrema pobreza aproximadamente 14 milhões de brasileiros (MADEIRO, 2021). A população brasileira nunca precisou tanto de acolhimento, solidariedade, de bem-estar e de inclusão social.
+De acordo com a edição mais recente do The World Giving Index, ranking produzido pela Charities Aid Foundation (CAF) divulgada no dia 15 de junho de 2021, o cidadão brasileiro fica em 54º lugar em ranking que mede o grau de solidariedade de um país (FERRASOLI, 2021).
+Assim, mesmo sendo um dos povos que mais acolhe e se solidariza com a causa alheia, é fato que precisamos melhorar, apoiar e engajar com causas que busquem combater a desigualdade social.
+Veja aqui o nosso vídeo com a apresentação da proposta do trabalho:
+
+https://sgaucminasbr.sharepoint.com/sites/team_sga_865_2021_2_3657103/Documentos%20Compartilhados/Grupo%205/Recordings/Exibir%20Apenas/Grava%C3%A7%C3%A3o%20v%C3%ADdeo%2030_ago-20210830_192933-Grava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o.mp4?web=1
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
