@@ -30,19 +30,14 @@ Os objetivos específicos da aplicação são: </p>
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+É evidente – conhecimento empírico – que as ações do poder público nem sempre suprem as demandas sociais, em países emergentes, como o Brasil, a precariedade de muitos serviços públicos, ou mesmo o abando, revela o quão importante é o trabalho das entidades do terceiro setor. </p>
+Adicionando o agravamento da extrema pobreza, e as limitações de contato físico que a pandemia de coronavírus impôs à sociedade, além do poder extraordinário da internet, fica claro que o apoio virtual por meio de doações e engajamento online, se faz extremamente importante para uma sociedade mais justa e colaborativa.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O foco deste trabalho está em disponibilizar uma ferramenta de interação para estreitar a relação entre doadores e instituições não governamentais. </p>
+Desta forma foi estabelecido como público-alvo homens e mulheres com mais de 18 anos que tenham vontade de participar de projetos sociais através de doação de recursos financeiros, materiais ou serviços voluntários, e pessoas jurídicas que valorizam a promoção do bem-estar social e queriam contribuir através de doações diretas (financeiras e não financeiras), doações por renúncia fiscal e voluntariado empresarial. Por fim, também é alvo deste projeto, todas as entidades sem fins lucrativos que geram impacto positivo na sociedade e tenham interesse em dar visibilidade a sua causa.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
