@@ -24,7 +24,7 @@ O projeto ainda está fase de desenolvimento e assim que for concluída a primei
 ## Documentação </p>
 Documentação de Contexto   </p>
 
-### 1.	Introdução ### </p>
+### 1.	Introdução </p>
 
 De acordo com parecer da Organização Mundial da Saúde, estamos vivendo a maior crise sanitária, causada pela pandemia do coronavírus, dos últimos 50 anos (OMS, 2020).  
 O mundo de uma forma geral, nunca precisou tanto expandir laços e acolher os mais necessitados. Um recente relatório elaborado pela BBC Brasil constatou que a miséria, a pobreza e a marginalização dos mais pobres nunca foram tão flagrantes e vívidas em nosso seio social (CARRANÇA, 2021). Esta crise de saúde causada pela disseminação incontrolada do vírus, acabou se transformando em uma crise humanitária sem precedentes, cerceando o acesso aos direitos mais singelos e básicos que uma pessoa necessita para ter uma vida digna.  
