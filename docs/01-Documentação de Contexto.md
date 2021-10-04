@@ -37,10 +37,3 @@ Adicionando o agravamento da extrema pobreza, e as limitações de contato físi
 
 O foco deste trabalho está em disponibilizar uma ferramenta de interação para estreitar a relação entre doadores e instituições não governamentais. </p>
 Desta forma foi estabelecido como público-alvo homens e mulheres com mais de 18 anos que tenham vontade de participar de projetos sociais através de doação de recursos financeiros, materiais ou serviços voluntários, e pessoas jurídicas que valorizam a promoção do bem-estar social e queriam contribuir através de doações diretas (financeiras e não financeiras), doações por renúncia fiscal e voluntariado empresarial. Por fim, também é alvo deste projeto, todas as entidades sem fins lucrativos que geram impacto positivo na sociedade e tenham interesse em dar visibilidade a sua causa.
-
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
