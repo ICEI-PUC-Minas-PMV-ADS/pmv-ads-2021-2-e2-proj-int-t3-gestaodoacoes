@@ -18,19 +18,15 @@ Paralelamente a isso, Organizações Não Governamentais (ONGs) e projetos socia
 A partir disso, muitas pessoas (consideradas doadores em potencial), passaram a buscar informações sobre projetos que ajudam pessoas necessitadas e diretamente afetadas pela pandemia. O processo de busca dessas informações, nem sempre é efetivo e pode demorar muito tempo. Ainda assim, não é garantia de que doadores em potencial encontrem projetos sociais que se identifiquem e muitas vezes podem até desistir de apoiar, devido a essa dificuldade.
 Dessa forma como otimizar essa busca? Como identificar projetos sociais? Como conectar esses projetos com doadores em potencial? É preciso responder essas questões para desenvolver uma aplicação que atenda a demanda atual.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Desenvolver uma aplicação interativa capaz de conectar doadores às Organizações Não Governamentais (ONGs), possibilitando aos doadores visualizar projetos sociais, campanhas ou ações que estão ocorrendo no momento, além de permitir selecionar qual projeto se identifica para apoiar. A plataforma contará ainda com informações dos beneficiários e o critério utilizado para seleção dessas pessoas que serão contempladas pelas doações arrecadadas e permitirá que ONGs gerenciem as doações recebidas, que poderão ser agasalhos, alimentos, materiais de higiene pessoal ou doações financeiras.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Os objetivos específicos da aplicação são: </p>
+•	Identificar ONGs e seus projetos;  </p>
+•	Conectar projetos de ONGs a doadores em potencial; </p>
+•	Disponibilizar para o usuário doador a visualização e acompanhamento de projetos existentes nas ONGs; </p>
+•	Fornecer uma aplicação interativa capaz de estimular a realização de doações de forma virtual. </p>
 
 ## Justificativa
 
