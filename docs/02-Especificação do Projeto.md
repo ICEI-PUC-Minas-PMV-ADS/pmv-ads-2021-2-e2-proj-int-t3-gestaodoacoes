@@ -3,7 +3,7 @@
 Personas </p>
 As personas levantadas durante o processo de entendimento do problema são apresentadas abaixo. </p>
 
-<img src =https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-gestaodoacoes/blob/main/docs/img/camila.PNG</p>
+<img src = https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-gestaodoacoes/blob/main/docs/img/camila.PNG</p>
 
 <img src = https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-gestaodoacoes/blob/main/docs/img/Denis.PNG> </p>
 
