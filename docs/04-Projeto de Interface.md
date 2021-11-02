@@ -1,6 +1,9 @@
 ## Projeto Interface</p>
 Tendo em vista o perfil de usuários que acessarão a plataforma, o objetivo foi estabelecer soluções intuitivas e amigáveis a eles que, de certa forma, possuem dificuldade com o uso da tecnologia. Trabalhamos com a ideia de facilitar a usabilidade, navegação e transição de telas, buscando incrementar e permitir a melhor experiência do usuário na plataforma, pautando sempre em suavizar o acesso às informações.</p>
 
+## Fluxo de Navegação (Diagrama de Fluxo)</p>
+<img src =https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e1-proj-web-t5-g5-sistemas_doacoes/blob/main/img/diagrama%20de%20fluxo.PNG></p>
+
 ## Wireframes interativos</p>
 
 Conforme diagrama de fluxo do projeto, apresentado nos itens anteriores, as telas do sistema são apresentadas em detalhes nos itens que se seguem.
