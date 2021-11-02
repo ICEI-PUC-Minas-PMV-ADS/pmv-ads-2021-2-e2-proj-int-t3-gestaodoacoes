@@ -10,7 +10,6 @@ Desenvolver uma aplicação interativa capaz de conectar doadores às Organizaç
 
 ## Integrantes
 
-* Bruno Medeiros
 * Igor Vicente Machado
 * Leandro Ângelo Scardoelli
 * Tobias Gabriel Abreu Faria
