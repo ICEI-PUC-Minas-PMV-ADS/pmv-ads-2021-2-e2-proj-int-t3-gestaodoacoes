@@ -22,7 +22,7 @@ Igor Vicente Machado </P>
 Leandro Ângelo Scardoelli </P>
 Tobias Gabriel Abreu Faria </P>
 
-4.	Equipe de Design: Igor Vicente Machado </P>
+4.	Equipe de Design: </P>
 
 Igor Vicente Machado </P>
 Leandro Ângelo Scardoelli </P>
