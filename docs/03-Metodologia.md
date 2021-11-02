@@ -17,7 +17,7 @@ A equipe está organizada da seguinte maneira:
 
 1.	Scrum Master: Leandro Ângelo Scardoelli
 2.	Product Owner: Tobias Gabriel Abreu Faria </P>
-3.	Equipe de Desenvolvimento
+3.	Equipe de Desenvolvimento </P>
 Igor Vicente Machado </P>
 Leandro Ângelo Scardoelli </P>
 Tobias Gabriel Abreu Faria </P>
