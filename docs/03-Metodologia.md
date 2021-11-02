@@ -16,18 +16,17 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 A equipe está organizada da seguinte maneira:
 
 1.	Scrum Master: Leandro Ângelo Scardoelli
-2.	Product Owner: Tobias Gabriel Abreu Faria
-3.	
-4.	Equipe de Desenvolvimento
-Igor Vicente Machado
-Leandro Ângelo Scardoelli
-Tobias Gabriel Abreu Faria
+2.	Product Owner: Tobias Gabriel Abreu Faria </P>
+3.	Equipe de Desenvolvimento
+Igor Vicente Machado </P>
+Leandro Ângelo Scardoelli </P>
+Tobias Gabriel Abreu Faria </P>
 
-4.	Equipe de Design: Igor Vicente Machado
+4.	Equipe de Design: Igor Vicente Machado </P>
 
-Igor Vicente Machado
-Leandro Ângelo Scardoelli
-Tobias Gabriel Abreu Faria
+Igor Vicente Machado </P>
+Leandro Ângelo Scardoelli </P>
+Tobias Gabriel Abreu Faria </P>
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o Trello estruturado com as seguintes listas: 
 
