@@ -12,7 +12,7 @@ O diagrama mostra o fluxo de interação do usuário pelas telas do sistema. Cad
 O diagrama de classes demonstrado na figura abaixo demonstra as os tipos e origens dos dados a serem inseridos no portal, tal como a conexão entre as tabelas.
 
 <img src =https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e1-proj-web-t5-g5-sistemas_doacoes/blob/main/img/diagrama%20de%20classe.PNG></p>
-<img src =https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t3-gestaodoacoes/blob/main/docs/img/DiagramaClasse2.PNG></p>
+
 
 
 ## Wireframes interativos</p>
