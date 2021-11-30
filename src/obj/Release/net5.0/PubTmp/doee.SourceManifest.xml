@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="I:\Semestre_2_2021\vs2019\TUTORIAL MICROSOFT\doee\obj\Release\net5.0\PubTmp\Out\" />
-  <dbfullsql path="I:\Semestre_2_2021\vs2019\TUTORIAL MICROSOFT\doee\obj\Release\net5.0\PubTmp\EFSQLScripts\doee.Data.DoeeContext.sql" />
-</sitemanifest>

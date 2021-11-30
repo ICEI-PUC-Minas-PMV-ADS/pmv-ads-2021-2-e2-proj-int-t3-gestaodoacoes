@@ -2,53 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using doee.Data;
-using doee.Models;
+using WebApplication2.Models;
 
-namespace doee.Controllers
+namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class DoacoesController : Controller
     {
-        private readonly DoeeContext _context;
+        private readonly AppDbContext _context;
 
-        public DoacoesController(DoeeContext context)
+        public DoacoesController(AppDbContext context)
         {
             _context = context;
         }
-        public IActionResult Create()
-        {
-            ViewData["BeneficiarioCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ");
-            return View();
-        }
 
-        // POST: Doacoes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Data,NomeDoador,Email,Cpf,NomeCartao,NumeroCartao,Validade,CodSeguranca,Valor,BeneficiarioCNPJ")] Doacao doacao)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(doacao);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
-            }
-            ViewData["BeneficiarioCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.BeneficiarioCNPJ);
-            return RedirectToAction("Index", "Home");
-        } } }
-/*
         // GET: Doacoes
-        public async Task<IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index(string searchString)
         {
-            var doeeContext = _context.Doacoes.Include(d => d.Instituicao);
-            return View(await doeeContext.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+
+            var doacoes = from d in _context.Doacoes
+                          select d;
+
+            doacoes = doacoes.Where(d => d.Cpf.Equals(searchString));
+
+            return View(await doacoes.AsNoTracking().ToListAsync());
         }
 
         // GET: Doacoes/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -68,7 +55,30 @@ namespace doee.Controllers
         }
 
         // GET: Doacoes/Create
-        
+        [AllowAnonymous]
+        public IActionResult Create()
+        {
+            ViewData["instituicaoCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ");
+            return View();
+        }
+
+        // POST: Doacoes/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
+        public async Task<IActionResult> Create([Bind("Id,Data,Nome,Email,Cpf,NomeCartao,NumeroCartao,ValidadeCartao,CodSegurancaCartao,Valor,instituicaoCNPJ")] Doacao doacao)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(doacao);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Home");
+            }
+            ViewData["instituicaoCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.instituicaoCNPJ);
+            return View(doacao);
+        }
 
         // GET: Doacoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -83,8 +93,8 @@ namespace doee.Controllers
             {
                 return NotFound();
             }
-            ViewData["BeneficiarioCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.BeneficiarioCNPJ);
-            return RedirectToAction("Index", "Home");
+            ViewData["instituicaoCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.instituicaoCNPJ);
+            return View(doacao);
         }
 
         // POST: Doacoes/Edit/5
@@ -92,7 +102,7 @@ namespace doee.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Data,NomeDoador,Email,Cpf,NomeCartao,NumeroCartao,Validade,CodSeguranca,Valor,BeneficiarioCNPJ")] Doacao doacao)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Data,Nome,Email,Cpf,NomeCartao,NumeroCartao,ValidadeCartao,CodSegurancaCartao,Valor,instituicaoCNPJ")] Doacao doacao)
         {
             if (id != doacao.Id)
             {
@@ -119,7 +129,7 @@ namespace doee.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BeneficiarioCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.BeneficiarioCNPJ);
+            ViewData["instituicaoCNPJ"] = new SelectList(_context.Instituicoes, "CNPJ", "CNPJ", doacao.instituicaoCNPJ);
             return View(doacao);
         }
 
@@ -159,4 +169,3 @@ namespace doee.Controllers
         }
     }
 }
-*/

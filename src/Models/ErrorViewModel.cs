@@ -1,6 +1,6 @@
 using System;
 
-namespace doee.Models
+namespace WebApplication2.Models
 {
     public class ErrorViewModel
     {

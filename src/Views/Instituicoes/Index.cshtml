@@ -1,91 +1,91 @@
 ﻿@*@model IEnumerable<doee.Models.Instituicao>*@
-@model PaginatedList<doee.Models.Instituicao>
+@model PaginatedList<WebApplication2.Models.Instituicao>
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-@{
-    ViewData["Title"] = "Index";
-}
+    <h1 >Ongs de todos os setores</h1>
 
-<h1>Organizações</h1>
-
-<p>
-    <a asp-action="Create">Cadastrar Nova</a>
-</p>
-<form asp-action="Index" method="get">
-    <div class="form-actions no-color text-center">
-        <p>
-            <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="Procurar" class="btn btn-dark" /> |
-            <a asp-action="Index">Voltar lista completa</a>
-        </p>
+    <p>
+        <a asp-action="Create">Cadastrar Nova</a>
+    </p>
+    <div class="col-md-12">
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color text-center">
+                <p>
+                    <input class="col-md-4" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                    <input type="submit" value="Pesquisar" class="btn btn-dark" /> |
+                    <a asp-action="Index">Voltar lista completa</a>
+                </p>
+            </div>
+        </form>
     </div>
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Nome</a>
-            </th>
-            <th>
-                Setor de Atividade
-            </th>
-            <th>
-                Descrição Curta
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["MetaSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meta de Arrecadação</a>
-            </th>
-            <th>
-                Contato
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.setor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descricao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MetaArrecadacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @if (User.IsInRole("Ong"))
-                    {<a asp-action="Edit" asp-route-id="@item.CNPJ">Editar</a>}
-                    <a class="btn btn-success" asp-area="" asp-controller="Doacoes" asp-action="Create">Doar</a>
-                    <a asp-action="Details" asp-route-id="@item.CNPJ">+Detalhes</a>
-                </td>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Nome</a>
+                </th>
+                <th>
+                    Setor
+                </th>
+                <th>
+                    Descrição Curta
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MetaSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meta de Arrecadação</a>
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
-@{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-}
+        </thead>
+     
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescricaoCurta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MetaArrecadacao)
+                    </td>
 
-<a asp-action="Index"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-pageNumber="@(Model.PageIndex - 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-default @prevDisabled">
-    Previous
-</a>
-<a asp-action="Index"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-pageNumber="@(Model.PageIndex + 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-default @nextDisabled">
-    Next
-</a>
-  
+                    <td>
+                        @if (User.IsInRole("Adm"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.CNPJ">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@item.CNPJ">Delete</a>
+                        }
+                        <a class="btn btn-success" asp-area="" asp-controller="Doacoes" asp-action="Create">Doar</a>
+                        <a asp-action="Details" asp-route-id="@item.CNPJ">+Detalhes</a>
+                    </td>
+                </tr>
+    
+            }
+        </tbody>
+        
+    </table>
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-pageNumber="@(Model.PageIndex - 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-pageNumber="@(Model.PageIndex + 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @nextDisabled">
+        Next
+    </a>

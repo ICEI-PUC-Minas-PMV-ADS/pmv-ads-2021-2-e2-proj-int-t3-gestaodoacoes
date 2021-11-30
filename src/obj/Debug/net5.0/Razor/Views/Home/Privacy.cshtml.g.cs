@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "I:\Semestre_2_2021\vs2019\TUTORIAL MICROSOFT\doee\Views\_ViewImports.cshtml"
-using doee;
+using WebApplication2;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "I:\Semestre_2_2021\vs2019\TUTORIAL MICROSOFT\doee\Views\_ViewImports.cshtml"
-using doee.Models;
+using WebApplication2.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ddb6bffa5a9b264bf8f89038bf03c234083fd3", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9ff8f29724c84cae3cdb2189162004ece54a96de", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6b36aee4455a440795f240a74431c307640c545e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -1,24 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using BCrypt.Net;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using doee.Models;
-using doee.Data;
-using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
+using WebApplication2.Models;
+using WebApplication2.Repositories.Interfaces;
+//using WebApplication2.ViewModels;
 
-namespace doee.Controllers
+namespace WebApplication2.Controllers
 {
     public class InstituicoesController : Controller
     {
-        private readonly DoeeContext _context;
+        //private readonly AppDbContext _context;
+        //private ICategoriaRepository _categoriaRepository { get; }
+        //private readonly IInstituicaoRepository _instituicaoRepository;
+        private readonly AppDbContext _context;
 
-        public InstituicoesController(DoeeContext context)
+        public InstituicoesController(AppDbContext context)
         {
+            //_categoriaRepository = categoriaRepository;
+            //_instituicaoRepository = instituicaoRepository;
             _context = context;
         }
         public IActionResult Login()
@@ -76,11 +83,9 @@ namespace doee.Controllers
             return RedirectToAction("Login", "Instituicoes");
         }
 
-        // GET: Instituicoes
-        /* public async Task<IActionResult> Index()
-         {
-            return View(await _context.Instituicoes.ToListAsync());
-         }*/
+        //---------------------------------------------------------------
+       
+
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
@@ -104,7 +109,7 @@ namespace doee.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 instituicoes = instituicoes.Where(s => s.Nome.Contains(searchString)
-                                       || s.Descricao.Contains(searchString));
+                                       || s.Categoria.CategoriaNome.Contains(searchString));
             }
 
             switch (sortOrder)
@@ -123,8 +128,9 @@ namespace doee.Controllers
                     break;
             }
             int pageSize = 3;
-            return View(await PaginatedList<Instituicao>.CreateAsync(instituicoes.AsNoTracking(), pageNumber ?? 1, pageSize));
+            return View(await PaginatedList<Instituicao>.CreateAsync(instituicoes.Include(c => c.Categoria).AsNoTracking(), pageNumber ?? 1, pageSize));
         }
+
 
         // GET: Instituicoes/Details/5
         public async Task<IActionResult> Details(string id)
@@ -134,10 +140,7 @@ namespace doee.Controllers
                 return NotFound();
             }
 
-            var instituicao = await _context.Instituicoes.Include(i => i.Doacoes).AsNoTracking().FirstOrDefaultAsync(m => m.CNPJ == id);
-
-            //var instituicao = await _context.Instituicoes.FirstOrDefaultAsync(m => m.CNPJ == id);
-
+            var instituicao = await _context.Instituicoes.Include(i => i.Doacoes).Include(c => c.Categoria).AsNoTracking().FirstOrDefaultAsync(m => m.CNPJ == id);
             if (instituicao == null)
             {
                 return NotFound();
@@ -149,6 +152,7 @@ namespace doee.Controllers
         // GET: Instituicoes/Create
         public IActionResult Create()
         {
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome");
             return View();
         }
 
@@ -157,7 +161,7 @@ namespace doee.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,CNPJ,setor,Descricao,MetaArrecadacao,Email,senha")] Instituicao instituicao)
+        public async Task<IActionResult> Create([Bind("DataRegistro,Nome,CNPJ,CategoriaId,DescricaoCurta,DescricaoDetalhada,MetaArrecadacao,Email,senha,Estado,Cidade,Logradouro,CEP")] Instituicao instituicao)
         {
             if (ModelState.IsValid)
             {
@@ -168,7 +172,7 @@ namespace doee.Controllers
             }
             return View(instituicao);
         }
-
+     
         // GET: Instituicoes/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
@@ -182,6 +186,7 @@ namespace doee.Controllers
             {
                 return NotFound();
             }
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome", instituicao.CategoriaId);
             return View(instituicao);
         }
 
@@ -190,7 +195,7 @@ namespace doee.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Nome,CNPJ,setor,Descricao,MetaArrecadacao,Email,senha")] Instituicao instituicao)
+        public async Task<IActionResult> Edit(string id, [Bind("DataRegistro,Nome,CNPJ,CategoriaId,DescricaoCurta,DescricaoDetalhada,MetaArrecadacao,Email,senha,Estado,Cidade,Logradouro,CEP")] Instituicao instituicao)
         {
             if (id != instituicao.CNPJ)
             {
@@ -218,6 +223,7 @@ namespace doee.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome", instituicao.CategoriaId);
             return View(instituicao);
         }
 
@@ -230,6 +236,7 @@ namespace doee.Controllers
             }
 
             var instituicao = await _context.Instituicoes
+                .Include(i => i.Categoria)
                 .FirstOrDefaultAsync(m => m.CNPJ == id);
             if (instituicao == null)
             {
@@ -247,13 +254,58 @@ namespace doee.Controllers
             var instituicao = await _context.Instituicoes.FindAsync(id);
             _context.Instituicoes.Remove(instituicao);
             await _context.SaveChangesAsync();
-            await HttpContext.SignOutAsync();
-            return RedirectToAction("Login", "Instituicoes");
-        }
 
+            if (User.IsInRole("Ong")) 
+            { 
+                await HttpContext.SignOutAsync();
+                return RedirectToAction("Login", "Instituicoes");
+            }
+            return View(instituicao);
+        }    
         private bool InstituicaoExists(string id)
         {
             return _context.Instituicoes.Any(e => e.CNPJ == id);
         }
+        public async Task<IActionResult> Lista(string categoria)
+        {
+            var instituicoes = from s in _context.Instituicoes
+                               select s;
+
+            ViewData["Categoria"] = categoria;
+
+            if (categoria == null)
+            {
+                var appDbContext = _context.Instituicoes.Include(i => i.Categoria);
+                return View(await appDbContext.ToListAsync());
+            }
+            instituicoes = _context.Instituicoes
+                            .Where(c => c.Categoria.CategoriaNome.Equals(categoria)).OrderBy(c => c.Nome);
+
+            if (instituicoes == null)
+            {
+                return NotFound();
+            }
+            return View(await instituicoes.AsNoTracking().ToListAsync());
+        }
+        //---------------------------------------------------------------
     }
 }
+
+//public async Task<IActionResult> Lista(string categoria)
+//{
+//    IEnumerable<Instituicao> instituicoes;
+
+//    if (categoria == null)
+//    {
+//        var appDbContext = _context.Instituicoes.Include(i => i.Categoria);
+//        return View(await appDbContext.ToListAsync());
+//    }
+//    instituicoes = _context.Instituicoes
+//                    .Where(c => c.Categoria.CategoriaNome.Equals(categoria)).OrderBy(c => c.Nome);
+
+//    if (instituicoes == null)
+//    {
+//        return NotFound();
+//    }
+//    return View(instituicoes);
+//}

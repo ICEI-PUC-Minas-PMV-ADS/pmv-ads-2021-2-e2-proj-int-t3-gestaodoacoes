@@ -1,0 +1,16 @@
+﻿body {
+    margin-bottom: 100px;
+    background-image:url(../lib/imgs/3.jpg )
+}
+div{
+    font-size: 18px;
+}
+#tagtodascategorias{
+    background-color:tomato;
+
+}
+.hello{
+    margin-top: 8px;
+    margin-right: 50px;
+    margin-left: 20px;
+}

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="igormachado-001-site1" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^I:\\Semestre_2_2021\\vs2019\\TUTORIAL\ MICROSOFT\\doee\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="doee.Data.DoeeContext" description="" value="Server=(localdb)\mssqllocaldb;Database=Doee;Trusted_Connection=True;MultipleActiveResultSets=true" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^I:\\Semestre_2_2021\\vs2019\\TUTORIAL\ MICROSOFT\\doee\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\doee\.Data\.DoeeContext\.sql$" />
-  </parameter>
-</parameters>

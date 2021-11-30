@@ -1,16 +1,18 @@
-﻿@model doee.Models.Instituicao
+﻿@model WebApplication2.Models.Instituicao
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Editar</h1>
+<h1>Alterar informações de @Model.Nome</h1>
+<br />
 
-<hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
@@ -18,14 +20,19 @@
             </div>
             <input type="hidden" asp-for="CNPJ" />
             <div class="form-group">
-                <label asp-for="setor" class="control-label"></label>
-                <select asp-for="setor" class="form-control" asp-items="Html.GetEnumSelectList<Setor>()"></select>
-                <span asp-validation-for="setor" class="text-danger"></span>
+                <label asp-for="CategoriaId" class="control-label"></label>
+                <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
+                <span asp-validation-for="CategoriaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
+                <label asp-for="DescricaoCurta" class="control-label"></label>
+                <input asp-for="DescricaoCurta" class="form-control" />
+                <span asp-validation-for="DescricaoCurta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoDetalhada" class="control-label"></label>
+                <input asp-for="DescricaoDetalhada" class="form-control" />
+                <span asp-validation-for="DescricaoDetalhada" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MetaArrecadacao" class="control-label"></label>
@@ -33,9 +40,24 @@
                 <span asp-validation-for="MetaArrecadacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataRegistro" class="control-label"></label>
-                <input asp-for="DataRegistro" class="form-control" />
-                <span asp-validation-for="DataRegistro" class="text-danger"></span>
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control" asp-items="Html.GetEnumSelectList<Estado>()"></select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Logradouro" class="control-label"></label>
+                <input asp-for="Logradouro" class="form-control" />
+                <span asp-validation-for="Logradouro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CEP" class="control-label"></label>
+                <input asp-for="CEP" class="form-control" />
+                <span asp-validation-for="CEP" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
@@ -50,9 +72,15 @@
             <div class="form-group">
                 <input type="submit" value="Confirmar" class="btn btn-primary" />
             </div>
+            <div class="form-group invisible">
+                <label asp-for="DataRegistro" class="control-label"></label>
+                <input asp-for="DataRegistro" class="form-control" readonly />
+                <span asp-validation-for="DataRegistro" class="text-danger"></span>
+            </div>
         </form>
     </div>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

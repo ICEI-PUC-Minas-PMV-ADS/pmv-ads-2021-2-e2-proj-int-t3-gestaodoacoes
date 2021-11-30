@@ -1,0 +1,68 @@
+﻿@model Instituicao
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoCurta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoDetalhada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaArrecadacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.senha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.DataRegistro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Categoria.CategoriaNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.DescricaoCurta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.DescricaoDetalhada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.MetaArrecadacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.senha)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.CNPJ">Edit</a> |
+                    <a asp-controller="Instituicoes" asp-action="Details" asp-route-id="@Model.CNPJ">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@Model.CNPJ">Delete</a>
+                </td>
+            </tr>
+  
+    </tbody>
+</table>

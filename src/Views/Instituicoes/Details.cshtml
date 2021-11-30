@@ -1,38 +1,27 @@
-﻿@model doee.Models.Instituicao
+﻿@model WebApplication2.Models.Instituicao
 
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Detalhes</h1>
-
+<div class="row justify-content-between">
+    <h1>@Html.DisplayFor(model => model.Nome)</h1>
+    @if (User.IsInRole("Ong"))
+    {
+        <a class="btn btn-dark" asp-controller="Instituicoes" asp-action="Edit" asp-route-id="@User.Identity.Name"> Alterar</a>
+        <a class="btn btn-dark" asp-controller="Instituicoes" asp-action="Delete" asp-route-id="@User.Identity.Name"> Excluir</a>
+    }
+    else
+    {
+        <div>
+            <a class="row font-weight-bold" asp-action="Index"> ir para a lista completa</a>
+            <a class="btn btn-success" asp-area="" asp-controller="Doacoes" asp-action="Create">fazer uma doação</a>
+        </div>
+    }
+</div>
 <div>
+
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.setor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.setor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MetaArrecadacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MetaArrecadacao)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DataRegistro)
         </dt>
@@ -40,21 +29,43 @@
             @Html.DisplayFor(model => model.DataRegistro)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Categoria.CategoriaNome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DescricaoCurta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DescricaoCurta)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MetaArrecadacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MetaArrecadacao)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Doacoes)
-        </dt>
         <dd class="col-sm-10">
+            <h3 class="text-center">Doações Recebidas</h3>
             <table class="table">
                 <tr>
-                    <th>Data Transação</th>
-                    <th>Nome Doador</th>
-                    <th>Valor</th>
+                    <th>Data da doação</th>
+                    <th>Nome do Doador</th>
+                    <th>Valor doado</th>
                 </tr>
                 @foreach (var item in Model.Doacoes)
                 {
@@ -63,7 +74,7 @@
                             @Html.DisplayFor(modelItem => item.Data)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NomeDoador)
+                            @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Valor)
@@ -72,9 +83,45 @@
                 }
             </table>
         </dd>
+    </dl><br /><br />
+    <dl>
+        <dd class="col-sm-10">
+            <h3 class="text-center">Descrição das atividades da @Html.DisplayFor(model => model.Nome)</h3>
+            <table class="table">
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.DescricaoDetalhada);
+                    </td>
+                </tr>
+            </table>
+        </dd>
     </dl>
 </div>
 <div>
-    @if (User.IsInRole("Ong")) {<a asp-action="Edit" asp-route-id="@Model.CNPJ">Editar</a> }
-        
+    <dl class="col-4">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+    </dl>
 </div>

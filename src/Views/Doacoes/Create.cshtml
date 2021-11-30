@@ -1,25 +1,22 @@
-﻿@model doee.Models.Doacao
+﻿@model WebApplication2.Models.Doacao
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Área de Doação</h1>
 
+
+      <h1 class="text-capitalize text-center">Doação</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-                <span asp-validation-for="Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeDoador" class="control-label"></label>
-                <input asp-for="NomeDoador" class="form-control" />
-                <span asp-validation-for="NomeDoador" class="text-danger"></span>
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
@@ -30,6 +27,8 @@
                 <label asp-for="Cpf" class="control-label"></label>
                 <input asp-for="Cpf" class="form-control" />
                 <span asp-validation-for="Cpf" class="text-danger"></span>
+                <p class="text-danger">*apenas os números devem ser informados</p>
+
             </div>
             <div class="form-group">
                 <label asp-for="NomeCartao" class="control-label"></label>
@@ -42,26 +41,32 @@
                 <span asp-validation-for="NumeroCartao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Validade" class="control-label"></label>
-                <input asp-for="Validade" class="form-control" />
-                <span asp-validation-for="Validade" class="text-danger"></span>
+                <label asp-for="ValidadeCartao" class="control-label"></label>
+                <input asp-for="ValidadeCartao" class="form-control" />
+                <span asp-validation-for="ValidadeCartao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CodSeguranca" class="control-label"></label>
-                <input asp-for="CodSeguranca" class="form-control" />
-                <span asp-validation-for="CodSeguranca" class="text-danger"></span>
+                <label asp-for="CodSegurancaCartao" class="control-label"></label>
+                <input asp-for="CodSegurancaCartao" class="form-control" />
+                <span asp-validation-for="CodSegurancaCartao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Valor" class="control-label"></label>
                 <input asp-for="Valor" class="form-control" />
                 <span asp-validation-for="Valor" class="text-danger"></span>
+                <p class="text-danger">*valor inteiro, sem ponto ou vígula. (exemplo: 100)</p>
             </div>
             <div class="form-group">
-                <label asp-for="BeneficiarioCNPJ" class="control-label"></label>
-                <select asp-for="BeneficiarioCNPJ" class ="form-control" asp-items="ViewBag.BeneficiarioCNPJ"></select>
+                <label asp-for="instituicaoCNPJ" class="control-label"></label>
+                <select asp-for="instituicaoCNPJ" class="form-control" asp-items="ViewBag.instituicaoCNPJ"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Confirmar" class="btn btn-primary" />
+            </div>
+            <div class="form-group invisible">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" value="@DateTime.Now.ToString();" placeholder="@DateTime.Now" readonly/>
+                <span asp-validation-for="Data" class="text-danger"></span>
             </div>
         </form>
     </div>

@@ -1,0 +1,18 @@
+﻿
+<div class="justify-content-between" >
+    <a id="tagtodascategorias" class="nav-link  list-group-item-action active" asp-controller="Instituicoes" asp-action="Index" asp-route-categoria="" style="color:black">
+        <h3 class="mb-1">Ongs de todos os Setores</h3>
+    </a>
+</div>
+<br />
+@foreach (var categoria in Model)
+{
+    <div class="d-flex justify-content-between">
+        <a class="nav-link list-group-item list-group-item-action active" asp-controller="Instituicoes" asp-action="Lista" asp-route-categoria="@categoria.CategoriaNome" style="color:black">
+            <h3 class="mb-1">@categoria.CategoriaNome</h3>
+        </a>
+    </div>
+    <br />
+}
+
+

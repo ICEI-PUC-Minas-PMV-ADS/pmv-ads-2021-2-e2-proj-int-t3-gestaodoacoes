@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace doee.Models
+namespace WebApplication2.Models
 {
     public class PaginatedList<T> : List<T>
     {
+        public ICollection<Categoria> Rubi { get; set; }
         public int PageIndex { get; private set; }
         public int TotalPages { get; private set; }
 

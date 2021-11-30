@@ -1,14 +1,12 @@
-﻿@model IEnumerable<doee.Models.Doacao>
+﻿@model IEnumerable<WebApplication2.Models.Doacao>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Minhas Doações</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -16,33 +14,21 @@
                 @Html.DisplayNameFor(model => model.Data)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NomeDoador)
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
+          
             <th>
                 @Html.DisplayNameFor(model => model.Cpf)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeCartao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroCartao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Validade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CodSeguranca)
-            </th>
+          
+           
             <th>
                 @Html.DisplayNameFor(model => model.Valor)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Instituicao)
             </th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
@@ -52,36 +38,27 @@
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NomeDoador)
+                @Html.DisplayFor(modelItem => item.Nome)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Cpf)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeCartao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroCartao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Validade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodSeguranca)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Valor)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Instituicao.CNPJ)
+                <a asp-controller="Instituicoes" asp-action="Details" asp-route-id="@item.instituicaoCNPJ">Veja a Instituição</a>
+               
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                @if (User.IsInRole("Adm"))
+                {
+                    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                }
             </td>
         </tr>
 }

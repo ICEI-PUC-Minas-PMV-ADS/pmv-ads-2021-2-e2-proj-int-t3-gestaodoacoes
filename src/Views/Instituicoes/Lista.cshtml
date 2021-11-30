@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication2.Models.Instituicao>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Ongs do setor de @ViewData["Categoria"]</h1>
+<br />
+
+
+
+<div class="row justify-content-around">
+    @foreach (var item in Model)
+    {
+    <div class="card col-5">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nome)</h5>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.DescricaoCurta) </p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Cidade) - @Html.DisplayFor(modelItem => item.Estado) </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Meta R$:  @Html.DisplayFor(modelItem => item.MetaArrecadacao)</li>
+            <li class="list-group-item">
+                <a class="btn btn-success" asp-area="" asp-controller="Doacoes" asp-action="Create">Doar</a>
+            </li>
+            <li class="list-group-item">   <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.CNPJ"> + Detalhes</a></li>
+        </ul>
+        @if (User.IsInRole("Adm"))
+        {
+            <div class="card-body">
+                <a class="card-link" asp-action="Edit" asp-route-id="@item.CNPJ">Edit</a>
+
+                <a class="card-link" asp-action="Delete" asp-route-id="@item.CNPJ">Delete</a>
+            </div>
+        }
+    </div><br />
+     }
+</div>
